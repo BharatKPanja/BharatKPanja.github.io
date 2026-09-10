@@ -1,38 +1,60 @@
-# Bharat Panja
-Manager, Platform Engineering — OCI · Cloud . Linux . Security · AI
-[LinkedIn](https://www.linkedin.com/in/bharat-panja/)
+# BharatKpanja.github.io
 
+Personal hub for Bharat Panja — served at **https://bharatkpanja.github.io**.
+Built with [Jekyll](https://jekyllrb.com/) and the
+[Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) remote theme.
+
+## Layout
+
+| Path | What it is |
+|---|---|
+| `_config.yml` | Site settings, theme, author sidebar, collections |
+| `index.md` | Home / landing page |
+| `_pages/about.md` | About — the career story |
+| `_pages/articles.md` | Articles listing (lists `_posts`) |
+| `_pages/topics.md` | Topics listing (lists `_topics`) |
+| `_pages/projects.md` | Projects listing (lists `_projects`) |
+| `_posts/` | Articles & notes — `YYYY-MM-DD-title.md` |
+| `_topics/` | Deep-dive topic pages |
+| `_projects/` | Selected work / case studies |
+| `assets/images/` | Images, incl. `profile.jpg` for the avatar |
+| `_data/navigation.yml` | Top navigation bar |
+
+## How it scales
+
+Each content type is its own **collection**. To add a new section later, create a
+folder (e.g. `_talks`), register it under `collections:` in `_config.yml`, add a
+listing page in `_pages/`, and add one line to `_data/navigation.yml`. No restructure.
+
+### Add an article
+
+Create `_posts/YYYY-MM-DD-your-title.md`:
+
+```yaml
 ---
-
-## About
-I started as an Oracle Applications DBA and grew from there — Senior, Lead, and eventually into management — each step earned through deeper ownership . Today I can lead anything across OCI,Cloud,Linux,Security. Twenty years in, I'm also driving meaningful AI adoption across my team and org.
-
-## What I do now
-**Manager, Platform Engineering — First American Title** (2016–present)
-
-- Own availability, security, and compliance of tier-0 ERP systems.
-- Lead teams across US and India; set technical direction and mentor.
-- Coordinate delivery across application, infra, and security divisions.
-
-### Recent work
-- **AI enablement** — Enabled the platform team for practical AI adoption practices
-- **Exadata X8 → X11M on OCI** — Migration of Oracle ERP database tier to current-gen Exadata.
-- **OCI fleet OS upgrade** — Oracle Linux 7 → 8 across the entire OCI estate.
-- **On-prem → OCI migration** — lifted Oracle EBS 12.2 to OCI on Exadata Cloud Service with Oracle IDCS.
-
-## Platform footprint
-**Cloud:** OCI (compute, network, storage, IAM, databases), Exadata Cloud Service · Azure · AWS
-**Oracle:** EBS 12.2 / 12.1, Oracle Database, RAC, Dataguard, FMW 
-**Infra & OS:** Linux, Unix administration
-**Security:** Design & analysis, vulnerability remediation,CISSP practices
-**Ways of working:** solutioning, troubleshooting, incident & problem management, team leadership
-
-
-## Clients I've supported
-GE Healthcare · First American Title · Welch's · Stryker · Johnson Controls · Acco Brands
-
-## Education
-B.Tech, Computer Science & Information Technology
-
+title: "Your title"
+date: 2026-09-15
+categories: [notes]
+tags: [oci, migration]
+excerpt: "One-line summary."
 ---
-*Certifications and references available on request.*
+```
+
+### Add a topic or project
+
+Create a file in `_topics/` or `_projects/` with `title` and `excerpt` front matter.
+It appears on the matching listing page automatically.
+
+## Publishing
+
+Push to GitHub, then **Settings → Pages → Build from the `master` branch**.
+The site is live at the root URL within a minute or two.
+
+## Local preview (optional)
+
+```
+bundle install
+bundle exec jekyll serve
+```
+
+Then open http://localhost:4000.

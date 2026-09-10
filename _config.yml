@@ -1,0 +1,95 @@
+# ---------------------------------------------------------------------------
+# Site settings
+# ---------------------------------------------------------------------------
+remote_theme: "mmistakes/minimal-mistakes@4.26.2"
+minimal_mistakes_skin: "default" # air, aqua, contrast, dark, dirt, neon, mint, plum, sunrise
+
+title: "Bharat Panja"
+name: "Bharat Panja"
+description: "Manager, Platform Engineering — OCI, Cloud, Linux, Security, AI."
+url: "https://bharatkpanja.github.io"
+locale: "en-US"
+words_per_minute: 200
+
+# ---------------------------------------------------------------------------
+# Author profile (sidebar)
+# ---------------------------------------------------------------------------
+author:
+  name: "Bharat Panja"
+  avatar: "/assets/images/profile.jpg" # add a square photo here later
+  bio: "Platform engineering leader. 20 years in Oracle ERP, OCI, and cloud infrastructure — now driving practical AI adoption."
+  location: "United States"
+  links:
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/bharat-panja/"
+
+footer:
+  links:
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/bharat-panja/"
+
+# ---------------------------------------------------------------------------
+# Build settings
+# ---------------------------------------------------------------------------
+markdown: kramdown
+plugins:
+  - jekyll-include-cache
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
+
+paginate: 5
+paginate_path: /articles/page:num/
+
+include:
+  - _pages
+
+# ---------------------------------------------------------------------------
+# Collections — each content type is its own section, so the site scales by
+# adding a folder + a nav line, never a restructure.
+#   _posts     → Articles / notes (built in)
+#   _topics    → Deep-dive topic pages
+#   _projects  → Selected work / case studies
+# ---------------------------------------------------------------------------
+collections:
+  topics:
+    output: true
+    permalink: /topics/:name/
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+# ---------------------------------------------------------------------------
+# Defaults
+# ---------------------------------------------------------------------------
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      share: false
+      related: true
+  - scope:
+      path: ""
+      type: topics
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: single
+      author_profile: true
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true

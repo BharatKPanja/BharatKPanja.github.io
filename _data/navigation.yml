@@ -1,0 +1,10 @@
+# Top navigation bar — add a line here as each section comes online.
+main:
+  - title: "About"
+    url: /about/
+  - title: "Articles"
+    url: /articles/
+  - title: "Topics"
+    url: /topics/
+  - title: "Projects"
+    url: /projects/
