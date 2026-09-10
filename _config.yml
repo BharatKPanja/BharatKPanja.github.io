@@ -36,57 +36,15 @@ footer:
 markdown: kramdown
 plugins:
   - jekyll-include-cache
-  - jekyll-feed
   - jekyll-sitemap
-  - jekyll-paginate
-
-paginate: 5
-paginate_path: /articles/page:num/
 
 include:
   - _pages
 
 # ---------------------------------------------------------------------------
-# Collections — each content type is its own section, so the site scales by
-# adding a folder + a nav line, never a restructure.
-#   _posts     → Articles / notes (built in)
-#   _topics    → Deep-dive topic pages
-#   _projects  → Selected work / case studies
-# ---------------------------------------------------------------------------
-collections:
-  topics:
-    output: true
-    permalink: /topics/:name/
-  projects:
-    output: true
-    permalink: /projects/:name/
-
-# ---------------------------------------------------------------------------
 # Defaults
 # ---------------------------------------------------------------------------
 defaults:
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      share: false
-      related: true
-  - scope:
-      path: ""
-      type: topics
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-  - scope:
-      path: ""
-      type: projects
-    values:
-      layout: single
-      author_profile: true
   - scope:
       path: ""
       type: pages
