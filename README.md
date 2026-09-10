@@ -8,42 +8,38 @@ Built with [Jekyll](https://jekyllrb.com/) and the
 
 | Path | What it is |
 |---|---|
-| `_config.yml` | Site settings, theme, author sidebar, collections |
+| `_config.yml` | Site settings, theme, author sidebar |
 | `index.md` | Home / landing page |
 | `_pages/about.md` | About — the career story |
-| `_pages/articles.md` | Articles listing (lists `_posts`) |
-| `_pages/topics.md` | Topics listing (lists `_topics`) |
-| `_pages/projects.md` | Projects listing (lists `_projects`) |
-| `_posts/` | Articles & notes — `YYYY-MM-DD-title.md` |
-| `_topics/` | Deep-dive topic pages |
-| `_projects/` | Selected work / case studies |
+| `_pages/books.md` | Books |
+| `_pages/inspiration.md` | Inspiration |
+| `_pages/thoughts.md` | Thoughts |
+| `_includes/footer.html` | Footer override (drops the theme credit) |
 | `assets/images/` | Images, incl. `profile.jpg` for the avatar |
 | `_data/navigation.yml` | Top navigation bar |
 
-## How it scales
+## Sections
 
-Each content type is its own **collection**. To add a new section later, create a
-folder (e.g. `_talks`), register it under `collections:` in `_config.yml`, add a
-listing page in `_pages/`, and add one line to `_data/navigation.yml`. No restructure.
+The site has four pages — About, Books, Inspiration, Thoughts — each a single
+Markdown file in `_pages/`. To add a new section, create a page there, give it a
+`permalink`, and add one line to `_data/navigation.yml`.
 
-### Add an article
+### Add or edit a page
 
-Create `_posts/YYYY-MM-DD-your-title.md`:
+Each page in `_pages/` looks like:
 
 ```yaml
 ---
-title: "Your title"
-date: 2026-09-15
-categories: [notes]
-tags: [oci, migration]
-excerpt: "One-line summary."
+title: "Books"
+permalink: /books/
+author_profile: true
 ---
+
+Your content here.
 ```
 
-### Add a topic or project
-
-Create a file in `_topics/` or `_projects/` with `title` and `excerpt` front matter.
-It appears on the matching listing page automatically.
+When any section grows into a long list of entries, it can be converted to a
+Jekyll *collection* — not needed yet.
 
 ## Publishing
 
